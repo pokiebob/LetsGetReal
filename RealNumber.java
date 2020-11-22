@@ -59,8 +59,9 @@ public class RealNumber{
   *this minus the other
   */
   public RealNumber subtract(RealNumber other){
-    return null;
+    return new RealNumber(value - other.getValue());
   }
+
   public static void main(String[] args) {
     RealNumber a = new RealNumber(0.125);
     RealNumber a1 = new RealNumber(0.125001);
@@ -84,5 +85,9 @@ public class RealNumber{
     System.out.println(c.divide(a));
     System.out.println(b.divide(d));
     System.out.println(d.divide(a));
+
+    System.out.println(c.subtract(d));
+    System.out.println(a.equals(b.subtract(d)));
+
   }
 }
