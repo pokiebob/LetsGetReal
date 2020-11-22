@@ -35,7 +35,7 @@ public class RealNumber{
   public RealNumber add(RealNumber other){
      //other can be ANY RealNumber, including a RationalNumber
      //or other subclasses of RealNumber (that aren't written yet)
-     return null;
+     return new RealNumber(value + other.getValue());
   }
 
   /*
@@ -68,10 +68,14 @@ public class RealNumber{
     RealNumber b = new RealNumber(1.125);
     RealNumber c = new RealNumber(0);
     RealNumber c1 = new RealNumber(0.0);
+    RealNumber d = new RealNumber(1);
 
     System.out.println(a.equals(a1));
     System.out.println(a.equals(a2));
     System.out.println(a.equals(b));
     System.out.println(c.equals(c1));
+
+    System.out.println(b.equals(a.add(d)));
+    System.out.println(a1.add(a2));
   }
 }
