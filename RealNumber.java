@@ -43,7 +43,7 @@ public class RealNumber{
   *the product of this and the other
   */
   public RealNumber multiply(RealNumber other){
-        return null;
+        return new RealNumber(value * other.getValue());
   }
 
   /*
@@ -77,5 +77,8 @@ public class RealNumber{
 
     System.out.println(b.equals(a.add(d)));
     System.out.println(a1.add(a2));
+
+    System.out.println(a.multiply(c));
+    System.out.println(b.multiply(d));
   }
 }
