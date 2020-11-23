@@ -113,14 +113,13 @@ public class RationalNumber extends RealNumber {
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-
     return new RationalNumber(numerator * other.getDenominator() + other.getNumerator() * denominator, denominator * other.getDenominator());
   }
   /**
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return null;
+    return new RationalNumber(numerator * other.getDenominator() - other.getNumerator() * denominator, denominator * other.getDenominator());
   }
 
   public static void main(String[] args) {
@@ -162,8 +161,12 @@ public class RationalNumber extends RealNumber {
     System.out.println(b.divide(c));
 
     System.out.println(a.add(b));
-    System.out.println(d.add(a));
+    System.out.println(d.add(b));
     System.out.println(b.add(c));
+
+    System.out.println(a.subtract(b));
+    System.out.println(d.subtract(b));
+    System.out.println(b.subtract(c));
 
   }
 } 
