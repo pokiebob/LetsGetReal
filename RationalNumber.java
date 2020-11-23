@@ -106,7 +106,7 @@ public class RationalNumber extends RealNumber {
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return null;
+    return multiply(other.reciprocal());
   }
 
   /**
@@ -156,6 +156,9 @@ public class RationalNumber extends RealNumber {
 
     System.out.println(a.multiply(b));
     System.out.println(b.multiply(c));
+
+    System.out.println(b.divide(a));
+    System.out.println(b.divide(c));
 
   }
 } 
