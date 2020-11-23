@@ -52,8 +52,12 @@ public class RationalNumber extends RealNumber {
       return numerator == other.getNumerator() && denominator == other.getDenominator();
     }
   }
-
-  
+  /**
+  *@return the value expressed as "3/4" or "8/3"
+  */
+  public String toString(){
+    return "" + numerator + "/" + denominator;
+  }
 
   /**
   *Divide the numerator and denominator by the GCD
@@ -113,5 +117,9 @@ public class RationalNumber extends RealNumber {
 
     System.out.println(a.equals(b));
     System.out.println(c.equals(new RationalNumber(0, 4)));
+
+    System.out.println(a);
+    System.out.println(b);
+    System.out.println(c);
   }
 } 
