@@ -34,6 +34,25 @@ public class RationalNumber extends RealNumber {
   public int getDenominator(){
     return denominator;
   }
+
+  /**
+  *@return a new RationalNumber that has the same numerator
+  *and denominator as this RationalNumber but reversed.
+  */
+  public RationalNumber reciprocal(){
+    return new RationalNumber(denominator, numerator);
+  }
+  /**
+  *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
+  */
+  public boolean equals(RationalNumber other){
+    if (numerator == 0) {
+      return other.getNumerator() == 0;
+    } else {
+      return numerator == other.getNumerator() && denominator == other.getDenominator();
+    }
+  }
+
   
 
   /**
@@ -88,5 +107,11 @@ public class RationalNumber extends RealNumber {
     System.out.println(a.getDenominator());
     System.out.println(b.getDenominator());
     System.out.println(c.getDenominator());
+
+    System.out.println(b.getValue() - a.reciprocal().getValue());
+    System.out.println(a.getValue() - b.reciprocal().getValue());
+
+    System.out.println(a.equals(b));
+    System.out.println(c.equals(new RationalNumber(0, 4)));
   }
 } 
