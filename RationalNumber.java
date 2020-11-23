@@ -28,6 +28,13 @@ public class RationalNumber extends RealNumber {
     return numerator;
   }
   
+  /**
+  *@return the denominator
+  */
+  public int getDenominator(){
+    return denominator;
+  }
+  
 
   /**
   *Divide the numerator and denominator by the GCD
@@ -77,5 +84,9 @@ public class RationalNumber extends RealNumber {
     System.out.println(a.getNumerator());
     System.out.println(b.getNumerator());
     System.out.println(c.getNumerator());
+
+    System.out.println(a.getDenominator());
+    System.out.println(b.getDenominator());
+    System.out.println(c.getDenominator());
   }
 } 
