@@ -99,7 +99,7 @@ public class RationalNumber extends RealNumber {
   *Return a new RationalNumber that is the product of this and the other
   */
   public RationalNumber multiply(RationalNumber other){
-    return null;
+    return new RationalNumber(numerator * other.getNumerator(), denominator * other.getDenominator());
   }
 
   /**
@@ -153,6 +153,9 @@ public class RationalNumber extends RealNumber {
 
     System.out.println(gcd(a.getNumerator(), a.getDenominator()));
     System.out.println(gcd(3, 6));
+
+    System.out.println(a.multiply(b));
+    System.out.println(b.multiply(c));
 
   }
 } 
