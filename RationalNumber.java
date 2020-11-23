@@ -59,6 +59,29 @@ public class RationalNumber extends RealNumber {
     return "" + numerator + "/" + denominator;
   }
 
+  /**Calculate the GCD of two integers.
+  *@param a the first integers
+  *@param b the second integer
+  *@return the value of the GCD
+  */
+  private static int gcd(int a, int b){
+    /*use euclids method or a better one*/
+    // http:sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
+    if (a < b) {
+      int c = a;
+      a = b;
+      b = c;
+    }
+    int r = a%b;
+    while (r != 0) {
+      a = b;
+      b = r;
+      r = a % b;
+    }
+    return b;
+
+  }
+
   /**
   *Divide the numerator and denominator by the GCD
   *This must be used to maintain that all RationalNumbers are
@@ -99,6 +122,7 @@ public class RationalNumber extends RealNumber {
     RationalNumber a = new RationalNumber(1, 2);
     RationalNumber b = new RationalNumber(4, 1);
     RationalNumber c = new RationalNumber(20, 0);
+    RationalNumber d = new RationalNumber(3, 6);
 
     System.out.println(a.getValue());
     System.out.println(b.getValue());
@@ -121,5 +145,9 @@ public class RationalNumber extends RealNumber {
     System.out.println(a);
     System.out.println(b);
     System.out.println(c);
+
+    System.out.println(gcd(a.getNumerator(), a.getDenominator()));
+    System.out.println(gcd(d.getNumerator(), d.getDenominator()));
+
   }
 } 
