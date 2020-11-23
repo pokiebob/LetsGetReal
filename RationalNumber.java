@@ -46,9 +46,11 @@ public class RationalNumber extends RealNumber {
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
-    if (numerator == 0) {
-      return other.getNumerator() == 0;
+    if (numerator == 0 || other.getNumerator() == 0) {
+      return numerator == 0 && other.getNumerator() == 0;
     } else {
+      reduce();
+      other.reduce();
       return numerator == other.getNumerator() && denominator == other.getDenominator();
     }
   }
@@ -88,7 +90,9 @@ public class RationalNumber extends RealNumber {
   *reduced after construction.
   */
   private void reduce(){
-
+    int gcdee = gcd(numerator, denominator);
+    numerator = numerator / gcdee;
+    denominator = denominator / gcdee;
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**
@@ -141,13 +145,14 @@ public class RationalNumber extends RealNumber {
 
     System.out.println(a.equals(b));
     System.out.println(c.equals(new RationalNumber(0, 4)));
+    System.out.println(a.equals(d));
 
     System.out.println(a);
     System.out.println(b);
     System.out.println(c);
 
     System.out.println(gcd(a.getNumerator(), a.getDenominator()));
-    System.out.println(gcd(d.getNumerator(), d.getDenominator()));
+    System.out.println(gcd(3, 6));
 
   }
 } 
