@@ -22,6 +22,14 @@ public class RationalNumber extends RealNumber {
   }
 
   /**
+  *@return the numerator
+  */
+  public int getNumerator(){
+    return numerator;
+  }
+  
+
+  /**
   *Divide the numerator and denominator by the GCD
   *This must be used to maintain that all RationalNumbers are
   *reduced after construction.
@@ -58,12 +66,16 @@ public class RationalNumber extends RealNumber {
   }
 
   public static void main(String[] args) {
-    RealNumber a = new RationalNumber(1, 2);
-    RealNumber b = new RationalNumber(4, 1);
-    RealNumber c = new RationalNumber(20, 0);
+    RationalNumber a = new RationalNumber(1, 2);
+    RationalNumber b = new RationalNumber(4, 1);
+    RationalNumber c = new RationalNumber(20, 0);
 
     System.out.println(a.getValue());
     System.out.println(b.getValue());
     System.out.println(c.getValue());
+
+    System.out.println(a.getNumerator());
+    System.out.println(b.getNumerator());
+    System.out.println(c.getNumerator());
   }
 } 
