@@ -19,6 +19,7 @@ public class RationalNumber extends RealNumber {
         denominator = denominator * -1;
       }
     }
+    reduce();
   }
 
   public double getValue(){
@@ -76,6 +77,9 @@ public class RationalNumber extends RealNumber {
   private static int gcd(int a, int b){
     /*use euclids method or a better one*/
     // http:sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
+    if (a == 0) {
+      return 1;
+    }
     if (a < b) {
       int c = a;
       a = b;
@@ -134,6 +138,7 @@ public class RationalNumber extends RealNumber {
     RationalNumber b = new RationalNumber(4, 1);
     RationalNumber c = new RationalNumber(20, 0);
     RationalNumber d = new RationalNumber(3, 6);
+    RationalNumber e = new RationalNumber(3, 3);
 
     System.out.println(a.getValue());
     System.out.println(b.getValue());
@@ -160,6 +165,8 @@ public class RationalNumber extends RealNumber {
 
     System.out.println(gcd(a.getNumerator(), a.getDenominator()));
     System.out.println(gcd(3, 6));
+
+    System.out.println("e: " + e);
 
     System.out.println(a.multiply(b));
     System.out.println(b.multiply(c));
