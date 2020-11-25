@@ -26,7 +26,7 @@ public abstract class Number{
     if (this.getValue() == 0 && other.getValue() == 0) {
       return true;
     }
-    if ( Math.round(100000 * this.getValue()) == Math.round(100000 * other.getValue()) ) {
+    if ( Math.round(1000000 * this.getValue()) == Math.round(1000000 * other.getValue()) ) {
       return true;
     }
     return false;
