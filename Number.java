@@ -13,7 +13,7 @@ public abstract class Number{
     } else if (difference > 0) {
       return 1;
     } else {
-      return 0;
+      return -1;
     }
   }
 
@@ -23,5 +23,12 @@ public abstract class Number{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(RealNumber other){
+    if (this.getValue() == 0 && other.getValue() == 0) {
+      return true;
+    }
+    if ( Math.round(100000 * this.getValue()) == Math.round(100000 * other.getValue()) ) {
+      return true;
+    }
+    return false;
   }
 }
